@@ -1,0 +1,117 @@
+﻿/*
+ * Droid Arabic Kufi (Arabic) http://www.google.com/fonts/earlyaccess
+ */
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 400;
+  src: url(../fonts/v5/DroidKufi-Regular.eot);
+  src: url(../fonts/v5/DroidKufi-Regular.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/v5/DroidKufi-Regular.woff2) format('woff2'),
+       url(../fonts/v5/DroidKufi-Regular.woff) format('woff'),
+       url(../fonts/v5/DroidKufi-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Droid Arabic Kufi';
+  font-style: normal;
+  font-weight: 700;
+  src: url(../fonts/v5/DroidKufi-Bold.eot);
+  src: url(../fonts/v5/DroidKufi-Bold.eot?#iefix) format('embedded-opentype'),
+       url(../fonts/v5/DroidKufi-Bold.woff2) format('woff2'),
+       url(../fonts/v5/DroidKufi-Bold.woff) format('woff'),
+       url(../fonts/v5/DroidKufi-Bold.ttf) format('truetype');
+}
+body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4{
+    direction:rtl;
+    font-family: 'droid arabic kufi', sans-serif !important;
+}
+#main-content {
+    margin-right: 210px;
+    margin-left:0px;
+}
+.sidebar-toggle-box {
+    float: right;
+    padding-left: 15px;
+    margin-top: 20px;
+}
+a.logo {
+    font-size: 20px;
+    color: #ffffff;
+    float: right;
+    margin-top: 15px;
+    text-transform: uppercase;
+}
+.notify-row {
+    float: right;
+    margin-top: 15px;
+    margin-right: 92px;
+}
+
+.notify-arrow {
+    right: 7px;
+}
+#gritter-notice-wrapper {
+	 
+	left: 20px;
+	 
+}
+ul.sidebar-menu i li a i {
+    padding-left: 6px;
+}
+ul.sidebar-menu li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    padding-top: 15px;
+    padding-left: 0px;
+    padding-bottom: 15px;
+    padding-right: 10px;
+}
+#sidebar .sub-menu > .sub li  {
+    padding-right: 32px;
+      padding-left : 0;
+}
+#top_menu .nav > li, ul.top-menu > li {
+    float: right;
+}
+.dropdown-menu.inbox li a .photo img {
+    border-radius: 2px 2px 2px 2px;
+    float: right;
+    height: 40px;
+    margin-left: 4px;
+    width: 40px;
+}
+.dropdown-menu.inbox li a .subject .time {
+    font-size: 11px;
+    font-style: italic;
+    font-weight: bold;
+    position: absolute;
+    left: 5px;
+    right: auto;
+}
+@media (min-width: 768px){
+.form-horizontal .control-label {
+    text-align: right;
+}}
+
+.mt {
+	margin-top: 25px;
+}
+.mr {
+	margin-right: 25px;
+}
+.mb {
+	margin-bottom: 25px;
+}
+
+.ml {
+	margin-left: 5px;
+	}
+
+.no-padding {
+	padding: 0 !important;
+}
+
+.no-margin {
+	margin: 0 !important;
+}

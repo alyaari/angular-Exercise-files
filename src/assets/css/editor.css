@@ -1,0 +1,10 @@
+﻿.row { 
+    margin: 3px 0;
+    border: 1px solid #f5c6c6;
+}
+
+[class^='col-'] {
+    border: 1px  #51da7f;
+    margin: 0px;
+    border-style: dashed;
+}
