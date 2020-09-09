@@ -11,7 +11,6 @@ export class FilterPipe implements PipeTransform {
 if(value){
   value=value.filter(a=>
     a.productName.toLowerCase().includes(key.toLowerCase())
-   
     )
 }
     return value;
