@@ -34,6 +34,26 @@ export class ProductListComponent implements OnInit {
         }
     ];
   ngOnInit(): void {
+    this.datasource=this.products;
   }
+
+  showimages:boolean=false;
+
+key:string="";
+
+  ShowImages(event):void{
+ debugger
+ this.showimages=!this.showimages;
+  }
+  
+datasource:any[];
+
+search(){
+
+this.products=this.datasource.filter(a=>
+  a.productName.toLowerCase().includes(this.key.toLowerCase())
+  ||a.productId.toString().toLowerCase().includes(this.key.toLowerCase())
+  )
+}
 
 }
