@@ -35,13 +35,15 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of products|filterArray:key:'productCode'">
+      <tr *ngFor="let item of products|filterArray:key:'productId'">
         <th scope="row">{{item.productId}}</th>
         <td>{{item.productName}}</td>
-        <td>{{item.productCode | lowercase}}</td>
+        <td>{{item.productCode | lowercase|reverse}}</td>
         <td>{{item.releaseDate | date:"yyyy-MM-dd"}}</td>
         <td>{{item.price| currency:'USD':'symbol':'1.2-2'}}</td>
-        <td>{{item.starRating}}</td>
+        <td>
+          <app-rating [ratingNumber]='item.starRating' (ratingClicked)="rating($event)"></app-rating>
+        </td>
         <td><img 
           *ngIf="showimages"
           [src]="item.imageUrl"
@@ -49,6 +51,7 @@
             [alt]="item.productName" [style.width.px]="imageWidth"  [style.margin.px]="imageMargin"></td>
       
       </tr>
-    
+    <tr><td class="text-center" colspan="4">الاجمالي</td><td colspan="2">{{products|sum:'price'|currency:'USD':'symbol':'1.2-2'}}</td></tr>
     </tbody>
   </table>
+  

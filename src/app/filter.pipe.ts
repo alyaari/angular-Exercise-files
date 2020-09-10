@@ -5,15 +5,15 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class FilterPipe implements PipeTransform {
 
-  transform(value: any, args?: any): any {
-   let key=args[0]||"";
-  let p= args[1];
-if(value){
-  value=value.filter(a=>
-    a.productName.toLowerCase().includes(key.toLowerCase())
-    )
-}
+  transform(value: any, key: string='',field:string='productName'): any {
+    debugger
+ 
+    if (value) {
+      value = value.filter(a =>
+        a[field].toString().toLowerCase().includes(key.toLowerCase())
+      )
+    }
     return value;
   }
-
+ 
 }

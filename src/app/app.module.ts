@@ -7,13 +7,19 @@ import { MyComponentComponent } from './my-component/my-component.component';
 import {NavbarComponent} from './shaird/navbar/navbar.component'
 import { from } from 'rxjs';
 import { FilterPipe } from './filter.pipe';
+import { SumPipe } from './sum.pipe';
+import { ReversePipe } from './reverse.pipe';
+import { RatingComponent } from './rating/rating.component';
 @NgModule({
-  declarations: [		
+  declarations: [					
     AppComponent,
     ProductListComponent,
     MyComponentComponent,
     NavbarComponent,
-      FilterPipe
+      FilterPipe,
+      SumPipe,
+      ReversePipe,
+      RatingComponent
    ],
   imports: [
     BrowserModule,FormsModule
