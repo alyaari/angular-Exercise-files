@@ -1,1 +1,10 @@
-<i *ngFor="let star of stars" (click)="rate(star)" class="fa fa-star" [class.fa-star-half-full]="star==stars.length-1"></i>
+<i *ngFor="let star of stars" (click)="rate(star)" (mouseover)="setHover(star+1)"
+ (mouseout)="currentHover=ratingNumber" class="fa fa-star"
+ 
+ [class.yellow]="star<currentHover"
+  ></i>
+{{currentHover}}
+<!-- <input type="number" (change)="inputKeyUp($event)" [(ngModel)]="ratingNumber">
+
+
+{{ratingNumber}} -->

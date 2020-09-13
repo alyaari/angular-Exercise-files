@@ -42,9 +42,13 @@
         <td>{{item.releaseDate | date:"yyyy-MM-dd"}}</td>
         <td>{{item.price| currency:'USD':'symbol':'1.2-2'}}</td>
         <td>
-          <app-rating [ratingNumber]='item.starRating' (ratingClicked)="rating($event)"></app-rating>
+        {{item.starRating}}
+          <app-rating [(ratingNumber)]='item.starRating' (ratingClicked)="rating(item,$event)"
+          (ratingChange)="ratingChange(item,$event);"
+          ></app-rating>
         </td>
-        <td><img 
+        <td>
+          <img 
           *ngIf="showimages"
           [src]="item.imageUrl"
             [class.img-thumbnail]="item.productId==2"
