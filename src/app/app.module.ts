@@ -10,6 +10,8 @@ import { FilterPipe } from './filter.pipe';
 import { SumPipe } from './sum.pipe';
 import { ReversePipe } from './reverse.pipe';
 import { RatingComponent } from './rating/rating.component';
+import{ProductService}from './product.service';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [					
     AppComponent,
@@ -22,7 +24,8 @@ import { RatingComponent } from './rating/rating.component';
       RatingComponent
    ],
   imports: [
-    BrowserModule,FormsModule
+    BrowserModule,FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

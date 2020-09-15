@@ -9,6 +9,7 @@
     type="text">
   </div>
   <div class="col">
+    {{ps.myobject}}
     <button class="btn btn-success" (click)="search()">
       بحث
     </button>
@@ -16,7 +17,7 @@
     {{key}}
   </div>
 </div>
-<table *ngIf="products&&products.length" class="table">
+<table   class="table">
     <thead>
       <tr>
         <th scope="col">رقم المنتج</th>
@@ -35,7 +36,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let item of products|filterArray:key:'productId'">
+      <tr *ngFor="let item of products|async|filterArray:key:'productId'">
         <th scope="row">{{item.productId}}</th>
         <td>{{item.productName}}</td>
         <td>{{item.productCode | lowercase|reverse}}</td>

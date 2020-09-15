@@ -13,6 +13,7 @@ value.forEach(element=>{
 
 // for(var i=0;i<value.length;i++)
 // {
+  
 //   sum+=value[i][field];
 // }
     return sum;

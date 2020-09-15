@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductService } from './product.service';
 
 @Component({
   selector: 'my-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'myfirstapp';
+  constructor(public ps:ProductService)
+  {
+    ps.myobject="new value form app comp";
+  }
 }
