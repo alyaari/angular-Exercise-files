@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges } from '@angular/core';
 import{IProduct} from './IProduct';
 import { from, combineLatest, Observable } from 'rxjs';
-import { isNgTemplate } from '@angular/compiler';
+import { isNgTemplate, ThrowStmt } from '@angular/compiler';
 import {ProductService} from '../product.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit,OnChanges {
   constructor(public ps:ProductService) { }
   imageWidth:number=50;
   imageMargin:number=2;
-  products: Observable<IProduct[]> ;
+  products: IProduct[] ;
 ngOnChanges(){
   console.log('component is change')
 }
@@ -26,10 +26,10 @@ console.log(event)
   ngOnInit(): void {
   // console.log('component is Init')
     let prod:IProduct={productId:25,productName:"apple"};
-  // this.ps.getProducts().subscribe(res=> {
-  //   this.products=res;
-  // });
-  this.products=this.ps.getProducts();
+  this.ps.getProducts().subscribe(res=> {
+    this.products=res;
+  });
+  // this.products=this.ps.getProducts();
     // this.datasource=this.products;
   }
 
@@ -51,10 +51,9 @@ datasource:any[];
 
 search(){
  
-// this.products=this.datasource.filter(a=>
-//   a.productName.toLowerCase().includes(this.key.toLowerCase())
-//   ||a.productId.toString().toLowerCase().includes(this.key.toLowerCase())
-//   )
+ this.ps.searchProducts(this.key).subscribe(res=>{
+   this.products=res;
+ })
 }
 
 }
