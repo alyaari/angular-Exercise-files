@@ -1,0 +1,16 @@
+ <h2>تفاصيل المنتج {{product.productName}}</h2>
+<img src="{{product.imageUrl}}">
+<br>
+<span>رقم المنتج:</span> <span scope="row">{{product.productId}}</span><br>
+<span>اسم المنتج:</span>       <span>{{product.productName}}</span><br>
+<span>كود المنتج:</span>      <span>{{product.productCode | lowercase|reverse}}</span><br>
+<span>تاريخ المنتج:</span>         <span>{{product.releaseDate | date:"yyyy-MM-span"}}</span><br>
+<span>سعر المنتج:</span>        <span>{{product.price| currency:'USD':'symbol':'1.2-2'}}</span><br>
+<span>التقييم المنتج:</span>        <span><br>
+        {{product.starRating}}
+          <app-rating [(ratingNumber)]='product.starRating' 
+          ></app-rating>
+        </span>
+        <br>
+        <br>
+  <button [routerLink]="['/products']" routerLinkActive="router-link-active"  class="btn btn-success">رجوع</button>

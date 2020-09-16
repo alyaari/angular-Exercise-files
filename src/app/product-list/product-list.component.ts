@@ -3,6 +3,7 @@ import{IProduct} from './IProduct';
 import { from, combineLatest, Observable } from 'rxjs';
 import { isNgTemplate, ThrowStmt } from '@angular/compiler';
 import {ProductService} from '../product.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -11,10 +12,15 @@ import {ProductService} from '../product.service';
 })
 export class ProductListComponent implements OnInit,OnChanges {
   title:string="المنتجات"
-  constructor(public ps:ProductService) { }
+  constructor(public ps:ProductService,private router:Router) { }
   imageWidth:number=50;
   imageMargin:number=2;
   products: IProduct[] ;
+
+  opentProduct(id){
+this.router.navigate(['/products','details',id]);
+
+  }
 ngOnChanges(){
   console.log('component is change')
 }

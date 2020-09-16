@@ -25,6 +25,11 @@ export class ProductService {
           })
       )
   }
+ 
+getProductById(id){
+    return this.http.get<any>(this.apiUrl+"/Products("+id+")", this.httpOptions)
+    
+}
   searchProducts(key){
     return this.http.get<any>(this.apiUrl+`/Products?$filter=contains(productName,'${key}')`, this.httpOptions).pipe(
       map(res=> 

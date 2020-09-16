@@ -21,6 +21,7 @@
     <thead>
       <tr>
         <th scope="col">رقم المنتج</th>
+        <th scope="col">العمليات</th>
         <th scope="col">الاسم</th>
         <th scope="col">كود المنتج</th>
         <th scope="col">تاريخ الاصدار</th>
@@ -38,7 +39,8 @@
     <tbody>
       <tr *ngFor="let item of products">
         <th scope="row">{{item.productId}}</th>
-        <td>{{item.productName}}</td>
+        <th scope="row"><button (click)="opentProduct(item.productId)" class="btn btn-info btn-sm">التفاصيل</button></th>
+        <td ><a [routerLink]="['/products','details',item.productId]" routerLinkActive="router-link-active" >{{item.productName}}</a> </td>
         <td>{{item.productCode | lowercase|reverse}}</td>
         <td>{{item.releaseDate | date:"yyyy-MM-dd"}}</td>
         <td>{{item.price| currency:'USD':'symbol':'1.2-2'}}</td>

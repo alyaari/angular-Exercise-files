@@ -12,8 +12,11 @@ import { ReversePipe } from './reverse.pipe';
 import { RatingComponent } from './rating/rating.component';
 import{ProductService}from './product.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+import { HomeComponent } from './home/home.component';
+import { ProductDetailsComponent } from './product-details/product-details.component';
 @NgModule({
-  declarations: [					
+  declarations: [							
     AppComponent,
     ProductListComponent,
     MyComponentComponent,
@@ -21,11 +24,14 @@ import { HttpClientModule } from '@angular/common/http';
       FilterPipe,
       SumPipe,
       ReversePipe,
-      RatingComponent
+      RatingComponent,
+      HomeComponent,
+      ProductDetailsComponent
    ],
   imports: [
     BrowserModule,FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
