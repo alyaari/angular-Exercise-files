@@ -1,0 +1,33 @@
+<p>
+ انشاء منتج جديد {{product.productName}}
+</p>
+<div class="card">
+  <div class="card-body">
+    <form #myform="ngForm">
+      <div class="form-group">
+        <label class="col-md-4">الاسم</label>
+       <span *ngIf="productName.valid">الحقل ضروري</span> 
+        <input type="text" #productName required name="productName" [(ngModel)]="product.productName" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">الوصف </label>
+        <textarea class="form-control" name="description" [(ngModel)]="product.description" rows = 7 cols = "5"></textarea>
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">السعر</label>
+        <input type="text" [(ngModel)]="product.price" required name="price" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label class="col-md-4">التقييم</label>
+        <input type="text" [(ngModel)]="product.starRating" name="starRating" class="form-control" />
+      
+        <app-rating [(ratingNumber)]='product.starRating' (ratingClicked)="product.starRating=$event.star;"></app-rating>
+      </div>
+      <div class="form-group">
+        <button type="submit" [disabled]="!myform.valid" (click)='save()' class="btn btn-primary">حفظ</button>
+      </div>
+    </form>
+
+    {{product|json}}
+  </div>
+</div>

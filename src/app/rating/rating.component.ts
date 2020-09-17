@@ -26,6 +26,7 @@ ngOnChanges(){
 
 currentHover=0;
 rate(star){
+  // this.ratingChange.emit(this.ratingNumber);
   this.ratingClicked.emit({star:(star+1),msg:"this is star of "+star})
 }
 setHover(star){

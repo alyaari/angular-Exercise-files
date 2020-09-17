@@ -15,8 +15,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { CreateProductComponent } from './create-product/create-product.component';
 @NgModule({
-  declarations: [							
+  declarations: [								
     AppComponent,
     ProductListComponent,
     MyComponentComponent,
@@ -26,7 +27,8 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
       ReversePipe,
       RatingComponent,
       HomeComponent,
-      ProductDetailsComponent
+      ProductDetailsComponent,
+      CreateProductComponent
    ],
   imports: [
     BrowserModule,FormsModule,

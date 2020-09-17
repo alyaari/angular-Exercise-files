@@ -7,8 +7,9 @@ export class SumPipe implements PipeTransform {
 
   transform(value: any[], field:string): any {
 var sum=0;
+if(value)
 value.forEach(element=>{
-  sum+=element[field];
+  sum+=+element[field];
 });
 
 // for(var i=0;i<value.length;i++)

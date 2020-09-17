@@ -9,12 +9,12 @@
     type="text">
   </div>
   <div class="col">
-    {{ps.myobject}}
     <button class="btn btn-success" (click)="search()">
       بحث
     </button>
-
-    {{key}}
+    <button class="btn btn-danger" [routerLink]="['/products/add']" routerLinkActive="router-link-active"  >
+      جديد
+    </button>
   </div>
 </div>
 <table   class="table">
@@ -40,7 +40,7 @@
       <tr *ngFor="let item of products">
         <th scope="row">{{item.productId}}</th>
         <th scope="row"><button (click)="opentProduct(item.productId)" class="btn btn-info btn-sm">التفاصيل</button></th>
-        <td ><a [routerLink]="['/products','details',item.productId]" routerLinkActive="router-link-active" >{{item.productName}}</a> </td>
+        <td ><a [routerLink]="['/products','details',item.productId,{id:5,catid:2}]" routerLinkActive="router-link-active" >{{item.productName}}</a> </td>
         <td>{{item.productCode | lowercase|reverse}}</td>
         <td>{{item.releaseDate | date:"yyyy-MM-dd"}}</td>
         <td>{{item.price| currency:'USD':'symbol':'1.2-2'}}</td>

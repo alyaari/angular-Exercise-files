@@ -30,6 +30,9 @@ getProductById(id){
     return this.http.get<any>(this.apiUrl+"/Products("+id+")", this.httpOptions)
     
 }
+add(product){
+    return this.http.post<any>(this.apiUrl+"/Products",product, this.httpOptions)
+}
   searchProducts(key){
     return this.http.get<any>(this.apiUrl+`/Products?$filter=contains(productName,'${key}')`, this.httpOptions).pipe(
       map(res=> 

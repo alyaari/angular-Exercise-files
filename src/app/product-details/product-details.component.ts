@@ -14,6 +14,10 @@ export class ProductDetailsComponent implements OnInit {
 
   ngOnInit() {
     let id=this.route.snapshot.params["pid"];
+    let catid=this.route.snapshot.params["catid"];
+    let d=this.route.snapshot.params["id"];
+
+    console.log(d,catid);
 this.productService.getProductById(id).subscribe(res=>{
   this.product=res;
 })

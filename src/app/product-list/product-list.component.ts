@@ -18,8 +18,8 @@ export class ProductListComponent implements OnInit,OnChanges {
   products: IProduct[] ;
 
   opentProduct(id){
-this.router.navigate(['/products','details',id]);
-
+//this.router.navigate(['/products','details',id,{id:4,catid:36}]);
+this.router.navigateByUrl('/products/details/3?id=5&catid=2')
   }
 ngOnChanges(){
   console.log('component is change')

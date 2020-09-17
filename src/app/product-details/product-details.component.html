@@ -1,4 +1,7 @@
- <h2>تفاصيل المنتج {{product.productName}}</h2>
+<div *ngIf="product">
+
+
+<h2>تفاصيل المنتج {{product?.productName}}</h2>
 <img src="{{product.imageUrl}}">
 <br>
 <span>رقم المنتج:</span> <span scope="row">{{product.productId}}</span><br>
@@ -14,3 +17,4 @@
         <br>
         <br>
   <button [routerLink]="['/products']" routerLinkActive="router-link-active"  class="btn btn-success">رجوع</button>
+</div>
