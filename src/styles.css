@@ -3,3 +3,10 @@ body{
     direction: rtl;
     text-align: right;
 }
+form .ng-invalid{
+border-right: 5px solid red;
+}
+
+form .ng-valid{
+    border-right:5px solid green;
+}

@@ -39,7 +39,7 @@
     <tbody>
       <tr *ngFor="let item of products">
         <th scope="row">{{item.productId}}</th>
-        <th scope="row"><button (click)="opentProduct(item.productId)" class="btn btn-info btn-sm">التفاصيل</button></th>
+        <th scope="row"><button (click)="opentProduct(item.productId)" class="btn btn-info btn-sm">التفاصيل</button><button [routerLink]="['/products/edit/',item.productId]" routerLinkActive="router-link-active"  class="btn btn-info btn-sm">تعديل</button></th>
         <td ><a [routerLink]="['/products','details',item.productId,{id:5,catid:2}]" routerLinkActive="router-link-active" >{{item.productName}}</a> </td>
         <td>{{item.productCode | lowercase|reverse}}</td>
         <td>{{item.releaseDate | date:"yyyy-MM-dd"}}</td>

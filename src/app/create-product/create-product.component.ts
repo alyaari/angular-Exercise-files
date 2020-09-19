@@ -18,7 +18,7 @@ export class CreateProductComponent implements OnInit {
   }
 
   restform() {
-    this.product = { productName: 'defaultname', description: '', imageUrl: '', price: 0, productCode: '', releaseDate: new Date() }
+    this.product = { productName: '', description: '', imageUrl: '', productCode: '', releaseDate: new Date() }
   }
 
   save() {

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import{FormsModule} from '@angular/forms';
+import{FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { MyComponentComponent } from './my-component/my-component.component';
@@ -16,8 +16,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './home/home.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { CreateProductComponent } from './create-product/create-product.component';
+import { ReactFormComponent } from './react-form/react-form.component';
 @NgModule({
-  declarations: [								
+  declarations: [									
     AppComponent,
     ProductListComponent,
     MyComponentComponent,
@@ -28,11 +29,12 @@ import { CreateProductComponent } from './create-product/create-product.componen
       RatingComponent,
       HomeComponent,
       ProductDetailsComponent,
-      CreateProductComponent
+      CreateProductComponent,
+      ReactFormComponent
    ],
   imports: [
     BrowserModule,FormsModule,
-    HttpClientModule,
+    HttpClientModule,ReactiveFormsModule,
     AppRoutingModule
   ],
   providers: [],

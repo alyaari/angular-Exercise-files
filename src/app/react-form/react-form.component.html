@@ -1,0 +1,26 @@
+<form  [formGroup]="productForm" (submit)="save()">
+  <div class="form-group">
+    <label class="col-md-4">الاسم</label> 
+   <span *ngIf="productName.valid">الحقل ضروري</span> 
+    <input type="text" #productName required  formControlName="productName"   class="form-control" />
+  </div>
+  <div class="form-group">
+    <label class="col-md-4">الوصف </label>
+    <textarea class="form-control"  formControlName="description"  rows="3" cols = "5"></textarea>
+  </div>
+  <div class="form-group">
+    <label class="col-md-4">السعر</label>
+    <input type="text"   required  formControlName="price" class="form-control" />
+  </div>
+  <div class="form-group">
+    <label class="col-md-4">التقييم</label>
+    <input type="text"  formControlName="starRating" class="form-control" />
+  
+    <!-- <app-rating [(ratingNumber)]='starRating' (ratingClicked)="product.starRating=$event.star.toString();"></app-rating> -->
+  </div>
+  <div class="form-group">
+    <button type="submit" [disabled]="!productForm.valid" (click)='save()' class="btn btn-primary">حفظ</button>
+  </div>
+</form>
+
+{{productForm.value|json}}
